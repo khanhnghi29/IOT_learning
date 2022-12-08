@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Báo Cáo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js"></script>
+  </head>
+  <body>
+   
+    <div class="container p-3 my-3 bg-dark text-white">
+      <h1 style="text-align:center">BẢNG ĐIỀU KHIỂN</h1>
+    </div>
+
+      <div class="container">
+        <div class="row"> 
+          <div class="col-md-4 top" id="temperature" style="border:solid">
+            <h3><i class="fa-solid fa-temperature-three-quarters"></i> Nhiệt độ</h3>
+            <form action="#">
+                <label id="temperature1"></label>
+                <label for="temperature2"> ℃</label>
+              </form>
+        </div>
+
+        <div class="col-md-4 top" id="humidity" style="border:solid">
+          <h3><i class="fa-solid fa-cloud-moon-rain"></i> Độ ẩm</h3>
+          <form action="#">
+              <label id="humidity1"></label>
+              <label for="humidity2"> %</label>
+            </form>
+      </div>
+ 
+          <div class="col-md-4 top" id="thelight" style="border:solid">
+            <h3><i class="fa-sharp fa-solid fa-bolt"></i> Ánh sáng</h3>  
+            <form action="#">
+                <label id="thelight1"></label>
+                <label for="thelighte2"> Analog</label>
+              </form>
+        </div>
+    </div>
+
+    <div class="row row1">
+      <div class="col-md-8 col2" style="border:solid;">
+      
+       <canvas id="chart"></canvas>
+        </div>
+
+            <div class="col col-sm-4">
+              <div id="led1" class="row row2  bg-primary-rs" style="border:solid;">
+                <div style="display: flex; justify-content: space-between; ">
+                  <div style="margin-left: 145px;">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Led1</h3>
+                    <img id="myImage" src="bongden.jpg" style="width: 60px; height:60px;object-fit: cover; margin-top: 5px;" alt="">
+                  <h3 id="rgb" style="font-size:25px;"><i class="fa-solid"></i> </h3>
+                  </div>
+                              
+                </div>                                                        
+                <button  onclick="left()" type="button" class="btn btn-danger"style="height:40px; width:50px;margin:0 auto;">OFF</button>
+                <button  onclick="right()" type="button" class="btn btn-success" style="height:40px; width:50px;margin: 0 auto;">ON</button>                   
+              </div>
+
+              <div id="led2" class="row row2 led" style="border:solid;margin-bottom: -50px">
+                <div style="display: flex; justify-content: space-between; ">
+                  <div style="margin-left: 145px;">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Led2</h3>
+                    <img id="myImage1" src="bongden.jpg" style="width: 60px; height:60px;object-fit: cover; margin-top: 5px;" alt="">
+                  <h3 id="rgb" style="font-size:25px;"><i class="fa-solid"></i> </h3>
+                  </div>              
+                </div>                                                        
+                <button  onclick="left1()" type="button" class="btn btn-danger"style="height:40px; width:50px;margin:0 auto;">OFF</button>
+                <button  onclick="right1()" type="button" class="btn btn-success" style="height:40px; width:50px;margin: 0 auto;">ON</button>                
+              </div>
+              </div>
+            </div>
+          </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="custom.js"></script>
+  </body>
+</html>
+
